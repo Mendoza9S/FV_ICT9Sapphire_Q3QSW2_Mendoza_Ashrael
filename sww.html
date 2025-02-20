@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: #151515;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .btn {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Math Calculator</h1>
+        <p>Enter value to calculate:</p>
+        <label>Enter a value for a:</label>
+        <input type="number" id="a" class="form-control">
+        <label>Enter a value for b:</label>
+        <input type="number" id="b" class="form-control">
+        <br>
+        <button class="btn btn-success" onclick="product()">Product of a and b</button>
+        <button class="btn btn-warning" onclick="power()">a raise to b</button>
+        <button class="btn btn-danger" onclick="remainder()">Get the remainder</button>
+        <button class="btn btn-info" onclick="checkEquality()">Check if a is equal to b</button>
+        <h2 id="result"></h2>
+    </div>
+
+    <script>
+        function product() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            document.getElementById("result").innerHTML = "Product: " + (a * b);
+        }
+
+        function power() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            document.getElementById("result").innerHTML = "a^b: " + Math.pow(a, b);
+        }
+
+        function remainder() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            document.getElementById("result").innerHTML = "Remainder: " + (a % b);
+        }
+
+        function checkEquality() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            document.getElementById("result").innerHTML = (a === b) ? "a is equal to b" : "a is not equal to b";
+        }
+    </script>
+    <h5><a href="https://docs.google.com/document/d/1yt590kNWxZTZd-JGYW-WVzFaxBoDUfXS1lV6KRt3a64/edit?usp=sharing">sources</a></h5>
+</body>
+</html>
